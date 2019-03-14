@@ -1,0 +1,7 @@
+type User {
+  id: ID! @unique
+  name: String!
+  # Uncomment below to make schema change
+  # age: Int
+  # description: String
+}
