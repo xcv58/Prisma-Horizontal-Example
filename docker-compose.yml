@@ -10,8 +10,8 @@ services:
         port: 8001
         # uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
         # managementApiSecret: my-secret
-        rabbitUri: amqp://dqfeegng:APebV6-8G8u-xUwwKPm4TFgfMFTJeaBg@caterpillar.rmq.cloudamqp.com/dqfeegng
-        managementApiEnabled: false
+        rabbitUri: "amqp://dqfeegng:APebV6-8G8u-xUwwKPm4TFgfMFTJeaBg@caterpillar.rmq.cloudamqp.com/dqfeegng"
+        enableManagementApi: false
         databases:
           default:
             connector: mysql
@@ -30,8 +30,8 @@ services:
         port: 8002
         # uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
         # managementApiSecret: my-secret
-        rabbitUri: amqp://dqfeegng:APebV6-8G8u-xUwwKPm4TFgfMFTJeaBg@caterpillar.rmq.cloudamqp.com/dqfeegng
-        managementApiEnabled: false
+        rabbitUri: "amqp://dqfeegng:APebV6-8G8u-xUwwKPm4TFgfMFTJeaBg@caterpillar.rmq.cloudamqp.com/dqfeegng"
+        enableManagementApi: false
         databases:
           default:
             connector: mysql
@@ -41,7 +41,7 @@ services:
             password: prisma
             migrations: true
   prisma:
-    image: prismagraphql/prisma:1.28
+    image: prismagraphql/prisma-prod:1.28
     restart: always
     ports:
       - "8000:8000"
@@ -50,8 +50,8 @@ services:
         port: 8000
         # uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
         # managementApiSecret: my-secret
-        rabbitUri: amqp://dqfeegng:APebV6-8G8u-xUwwKPm4TFgfMFTJeaBg@caterpillar.rmq.cloudamqp.com/dqfeegng
-        managementApiEnabled: true
+        rabbitUri: "amqp://dqfeegng:APebV6-8G8u-xUwwKPm4TFgfMFTJeaBg@caterpillar.rmq.cloudamqp.com/dqfeegng"
+        enableManagementApi: true
         databases:
           default:
             connector: mysql
